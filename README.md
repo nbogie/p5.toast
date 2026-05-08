@@ -89,4 +89,3 @@ Produces, in `dist/`:
 
 - `p5.toast.js` — IIFE bundle, unminified, for `<script>` use.
 - `p5.toast.mjs` — ESM bundle, for `import` use.
-- `p5.toast.d.ts` — TypeScript declarations generated from JSDoc by `tsc`.
