@@ -2,6 +2,7 @@
 console.log("in p5.toast.js");
 /**
  * p5.toast — a minimal toast notification addon for p5.js v2.
+ * Limitations: only designed for global mode.  assumes one sketch on page (or, at least, one per iframe)
  */
 
 /**
@@ -51,11 +52,11 @@ export function toastAddon(p5, fn, lifecycles) {
             document.body.appendChild(styleElement)
             
             const css = `
-            .p5Toast { background: red; padding:0.5rem; }
+            .p5Toast { background: #fafafa; padding:0.5rem; }
 
             #p5ToastContainer { 
                 position: absolute; 
-                right: 0px; top: 0px;
+                right: 10px; top: 10px;
                 display: flex;
                 flex-direction: column;
                 align-items: right;
@@ -87,6 +88,7 @@ export function toastAddon(p5, fn, lifecycles) {
      * 
      * @param {string} message 
      * @returns {HTMLElement}
+     * @todo: keep track of all elements we add so that we can remove them all if the p5 sketch gets removed?
      */
     function createToastElement(message){
         const divElem = document.createElement("div");
