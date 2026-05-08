@@ -30,6 +30,16 @@ function mousePressed() {
 }
 ```
 
+### Pinning to a specific version
+
+The URL above always resolves to the latest published version, which means a future release could change behaviour under your sketch. To pin to a specific version, append `@<version>` to the package name:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@nbogie/p5.toast@0.0.1/dist/p5.toast.js"></script>
+```
+
+You can also pin by major or minor (e.g. `@nbogie/p5.toast@0` or `@nbogie/p5.toast@0.0`), which lets you pick up bug-fix releases without unexpected breaking changes.
+
 ## Install for developers
 
 ```sh
