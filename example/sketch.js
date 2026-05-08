@@ -1,13 +1,17 @@
 function setup() {
-  createCanvas(400, 400);
-}
-
-function draw() {
+  createCanvas(600, 400);
   background("skyblue")
 }
 
+function draw() {
+
+}
+
+
 function mousePressed() {
   toast("hi at " + round(millis()));
+  circle(mouseX, mouseY, 40);
+
 }
 
 function keyPressed(){

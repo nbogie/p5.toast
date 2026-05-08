@@ -43,6 +43,7 @@ export function toastAddon(p5, fn, lifecycles) {
             const css = `
             .p5Toast { 
                 background: #fafafa; 
+                color: #303030;
                 padding:0.5rem;
                 user-select: none;
                 box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -55,8 +56,10 @@ export function toastAddon(p5, fn, lifecycles) {
                 flex-direction: column;
                 align-items: right;
                 gap: 0.5rem;
-                };
-            
+                font-family: sans-serif;
+                // don't let the toasts intercept clicks (etc) meant for the canvas
+                pointer-events: none;
+            };
             `;
             styleElement.innerHTML = css;
         }
