@@ -87,7 +87,7 @@ export function toastAddon(p5, fn, lifecycles) {
      */
     function createToastElement(message){
         const divElem = document.createElement("div");
-        divElem.classList = "p5Toast";
+        divElem.classList.add("p5Toast");
         divElem.textContent = message;
         return divElem;
     }
