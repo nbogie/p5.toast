@@ -3,14 +3,20 @@
  */
 
 /**
- * p5.js v2 addon function. Receives the p5 constructor, an alias for
- * `p5.prototype` (`fn`), and a `lifecycles` object the addon may populate
- * with any of: `presetup`, `postsetup`, `predraw`, `postdraw`, `remove`.
+ * p5.js v2 addon function, called once at registration time.
  * @see https://beta.p5js.org/contribute/creating_libraries/
  *
- * @param {typeof import('p5').default} p5
- * @param {any} fn
- * @param {Record<string, Function>} lifecycles
+ * Use `function()` not `()=>` when attaching to `fn` or `lifecycles`,
+ * so `this` binds to the sketch instead of the enclosing scope.
+ *
+ * @param {typeof import('p5').default} p5  the p5 constructor (class).  (Not the instance.)
+ * @param {any} fn  alias for `p5.prototype`; attach methods here to expose
+ *   them as globals (global mode) or per-instance (instance mode). p5
+ *   invokes them with `this` bound to the running sketch — use it to
+ *   reach instance state, e.g. `this.canvas`.
+ * @param {Record<string, Function>} lifecycles  populate with any of:
+ *   `presetup`, `postsetup`, `predraw`, `postdraw`, `remove`. Each hook
+ *   is called with `this` bound to the running sketch.
  */
 export function toastAddon(p5, fn, lifecycles) {
     /**
