@@ -59,12 +59,12 @@ export function toastAddon(p5, fn, lifecycles) {
                 right: 10px; top: 10px;
                 display: flex;
                 flex-direction: column;
-                align-items: right;
+                align-items: flex-end;
                 gap: 0.5rem;
                 font-family: sans-serif;
-                // don't let the toasts intercept clicks (etc) meant for the canvas
+                /* don't let the toasts intercept clicks (etc) meant for the canvas */
                 pointer-events: none;
-            };
+            }
             `;
             styleElement.innerHTML = css;
         }
@@ -101,4 +101,3 @@ export function toastAddon(p5, fn, lifecycles) {
 if (typeof p5 !== "undefined") {
     p5.registerAddon(toastAddon);
 }
-
