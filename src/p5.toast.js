@@ -41,7 +41,12 @@ export function toastAddon(p5, fn, lifecycles) {
             document.body.appendChild(styleElement)
             
             const css = `
-            .p5Toast { background: #fafafa; padding:0.5rem; }
+            .p5Toast { 
+                background: #fafafa; 
+                padding:0.5rem;
+                user-select: none;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
 
             #p5ToastContainer { 
                 position: absolute; 
