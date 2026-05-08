@@ -7,9 +7,10 @@ function draw() {
 }
 
 function mousePressed() {
-  toast(millis());
+  toast("hi at " + round(millis()));
 }
 
 function keyPressed(){
-  toast("key: " + key)
+  //optionally you can set a duration in milliseconds
+  toast("key: " + key, {duration: 500})
 }

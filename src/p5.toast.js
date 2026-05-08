@@ -18,9 +18,9 @@ export function toastAddon(p5, fn, lifecycles) {
      * pop up a notification for a while then remove it
      * @param {string} message
      */
-    fn.toast = function (message) {
+    fn.toast = function (message, options={}) {
         
-        const durationMillis = 2000;
+        const durationMillis = options.duration ?? 2000;
         createglobalToastStylesIfMissing();
         const container = getOrCreateToastContainer();
         const toastElement = createToastElement(message);
