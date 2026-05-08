@@ -90,3 +90,7 @@ Produces, in `dist/`:
 
 - `p5.toast.js` — IIFE bundle, unminified, for `<script>` use.
 - `p5.toast.mjs` — ESM bundle, for `import` use.
+
+
+## AI: 
+I've used AI to make the addon scaffold and vite config, and done the actual toast functionality myself for practice.  I might get tired of that and just use AI for maintenance, we'll see.
