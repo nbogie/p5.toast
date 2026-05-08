@@ -1,14 +1,12 @@
 {
-  "name": "p5.toast",
+  "name": "@nbogie/p5.toast",
   "version": "0.0.1",
   "description": "Simple toast notification addon for p5.js v2.x",
   "type": "module",
   "main": "dist/p5.toast.js",
   "module": "dist/p5.toast.mjs",
-  "types": "dist/p5.toast.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/p5.toast.d.ts",
       "import": "./dist/p5.toast.mjs",
       "require": "./dist/p5.toast.js"
     }
@@ -21,10 +19,23 @@
     "dev": "vite",
     "build": "vite build && npm run types",
     "build:watch": "vite build --watch",
-    "types": "tsc"
+    "types": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": ["p5", "p5.js", "addon", "toast"],
   "license": "MIT",
+  "author": "nbogie",
+  "homepage": "https://github.com/nbogie/p5.toast#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nbogie/p5.toast.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nbogie/p5.toast/issues"
+  },
   "devDependencies": {
     "p5": "^2.2.3",
     "typescript": "^5.6.0",
