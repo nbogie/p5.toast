@@ -1,46 +1,51 @@
 {
-  "name": "@nbogie/p5.toast",
-  "version": "0.0.1",
-  "description": "Simple toast notification addon for p5.js v2.x",
-  "type": "module",
-  "main": "dist/p5.toast.js",
-  "module": "dist/p5.toast.mjs",
-  "exports": {
-    ".": {
-      "import": "./dist/p5.toast.mjs",
-      "require": "./dist/p5.toast.js"
+    "name": "@nbogie/p5.toast",
+    "version": "0.0.1",
+    "description": "Simple toast notification addon for p5.js v2.x",
+    "type": "module",
+    "main": "dist/p5.toast.js",
+    "module": "dist/p5.toast.mjs",
+    "exports": {
+        ".": {
+            "import": "./dist/p5.toast.mjs",
+            "require": "./dist/p5.toast.js"
+        }
+    },
+    "files": [
+        "dist",
+        "src"
+    ],
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build && npm run types",
+        "build:watch": "vite build --watch",
+        "types": "tsc",
+        "format": "prettier --write .",
+        "prepublishOnly": "npm run build"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "keywords": [
+        "p5",
+        "p5.js",
+        "addon",
+        "toast"
+    ],
+    "license": "MIT",
+    "author": "nbogie",
+    "homepage": "https://github.com/nbogie/p5.toast#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nbogie/p5.toast.git"
+    },
+    "bugs": {
+        "url": "https://github.com/nbogie/p5.toast/issues"
+    },
+    "devDependencies": {
+        "p5": "^2.2.3",
+        "prettier": "^3.4.0",
+        "typescript": "^5.6.0",
+        "vite": "^5.4.0"
     }
-  },
-  "files": [
-    "dist",
-    "src"
-  ],
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build && npm run types",
-    "build:watch": "vite build --watch",
-    "types": "tsc",
-    "format": "prettier --write .",
-    "prepublishOnly": "npm run build"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": ["p5", "p5.js", "addon", "toast"],
-  "license": "MIT",
-  "author": "nbogie",
-  "homepage": "https://github.com/nbogie/p5.toast#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nbogie/p5.toast.git"
-  },
-  "bugs": {
-    "url": "https://github.com/nbogie/p5.toast/issues"
-  },
-  "devDependencies": {
-    "p5": "^2.2.3",
-    "prettier": "^3.4.0",
-    "typescript": "^5.6.0",
-    "vite": "^5.4.0"
-  }
 }

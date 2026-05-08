@@ -18,15 +18,15 @@ Then in `sketch.js` you can call `toast()` like any other p5 function:
 
 ```js
 function setup() {
-  createCanvas(400, 400);
+    createCanvas(400, 400);
 }
 
 function draw() {
-  background(220);
+    background(220);
 }
 
 function mousePressed() {
-  toast("hello");
+    toast("hello");
 }
 ```
 
@@ -40,11 +40,12 @@ The URL above always resolves to the latest published version, which means a fut
 
 You can also pin by major or minor (e.g. `@nbogie/p5.toast@0` or `@nbogie/p5.toast@0.0`), which lets you pick up bug-fix releases without unexpected breaking changes.
 
-## Limitations: 
-* No instance mode support. Only designed for p5 global mode.  (Assumes one sketch on page (or, at least, one per iframe)).
-* Currently positions toasts in top right of the document body, not the top right of the canvas.
-* No user-specified colours/styles.
- 
+## Limitations:
+
+- No instance mode support. Only designed for p5 global mode. (Assumes one sketch on page (or, at least, one per iframe)).
+- Currently positions toasts in top right of the document body, not the top right of the canvas.
+- No user-specified colours/styles.
+
 ## Install for developers
 
 ```sh

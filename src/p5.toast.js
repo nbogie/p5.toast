@@ -23,28 +23,26 @@ export function toastAddon(p5, fn, lifecycles) {
      * pop up a notification for a while then remove it
      * @param {string} message
      */
-    fn.toast = function (message, options={}) {
-        
+    fn.toast = function (message, options = {}) {
         const durationMillis = options.duration ?? 2000;
         createGlobalToastStylesIfMissing();
         const container = getOrCreateToastContainer();
-        
+
         const toastElement = createToastElement(message);
-        
+
         container.appendChild(toastElement);
-        function removeToastElement(){            
-            container.removeChild(toastElement)
+        function removeToastElement() {
+            container.removeChild(toastElement);
         }
-        setTimeout(removeToastElement, durationMillis)
+        setTimeout(removeToastElement, durationMillis);
     };
 
-    function createGlobalToastStylesIfMissing(){
-        
-        if (!document.getElementById("p5ToastStyles")){
+    function createGlobalToastStylesIfMissing() {
+        if (!document.getElementById("p5ToastStyles")) {
             const styleElement = document.createElement("style");
             styleElement.id = "p5ToastStyles";
-            document.body.appendChild(styleElement)
-            
+            document.body.appendChild(styleElement);
+
             const css = `
             .p5Toast { 
                 background: #fafafa; 
@@ -68,14 +66,13 @@ export function toastAddon(p5, fn, lifecycles) {
             `;
             styleElement.innerHTML = css;
         }
-
     }
     /**
      * @returns {HTMLElement} the container to which all toasts will be added.
      */
     function getOrCreateToastContainer() {
-      const containerId =   "p5ToastContainer";
-      let container = document.getElementById(containerId);
+        const containerId = "p5ToastContainer";
+        let container = document.getElementById(containerId);
         if (!container) {
             container = document.createElement("div");
             container.id = containerId;
@@ -85,12 +82,12 @@ export function toastAddon(p5, fn, lifecycles) {
     }
 
     /**
-     * 
-     * @param {string} message 
+     *
+     * @param {string} message
      * @returns {HTMLElement}
      * @todo: keep track of all elements we add so that we can remove them all if the p5 sketch gets removed?
      */
-    function createToastElement(message){
+    function createToastElement(message) {
         const divElem = document.createElement("div");
         divElem.classList.add("p5Toast");
         divElem.textContent = message;
