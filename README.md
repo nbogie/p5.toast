@@ -43,7 +43,7 @@ You can also pin by major or minor (e.g. `@nbogie/p5.toast@0` or `@nbogie/p5.toa
 ## Limitations: 
 * No instance mode support. Only designed for p5 global mode.  (Assumes one sketch on page (or, at least, one per iframe)).
 * Currently positions toasts in top right of the document body, not the top right of the canvas.
-
+* No user-specified colours/styles.
  
 ## Install for developers
 
