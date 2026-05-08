@@ -1,5 +1,4 @@
 //@ts-check
-console.log("in p5.toast.js");
 /**
  * p5.toast — a minimal toast notification addon for p5.js v2.
  * Limitations: only designed for global mode.  assumes one sketch on page (or, at least, one per iframe)
@@ -22,7 +21,6 @@ export function toastAddon(p5, fn, lifecycles) {
      */
     fn.showAlive = function (bgColour) {
         background(bgColour);
-        console.log("showAlive from p5.toast");
         circle(random(width), random(height), random(50, 100));
     };
 
@@ -31,7 +29,6 @@ export function toastAddon(p5, fn, lifecycles) {
      * @param {string} message
      */
     fn.toast = function (message) {
-        console.log("toast from p5.toast: ", message);
         
         const durationMillis = 2000;
         createglobalToastStylesIfMissing();
@@ -65,7 +62,6 @@ export function toastAddon(p5, fn, lifecycles) {
             
             `;
             styleElement.innerHTML = css;
-            console.log("appended new style element to document")
         }
 
     }
@@ -76,7 +72,6 @@ export function toastAddon(p5, fn, lifecycles) {
       const containerId =   "p5ToastContainer";
       let container = document.getElementById(containerId);
         if (!container) {
-            console.log("missing container - creating and appending to body");
             container = document.createElement("div");
             container.id = containerId;
             document.body.appendChild(container);
