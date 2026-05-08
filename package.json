@@ -20,6 +20,7 @@
     "build": "vite build && npm run types",
     "build:watch": "vite build --watch",
     "types": "tsc",
+    "format": "prettier --write .",
     "prepublishOnly": "npm run build"
   },
   "publishConfig": {
@@ -38,6 +39,7 @@
   },
   "devDependencies": {
     "p5": "^2.2.3",
+    "prettier": "^3.4.0",
     "typescript": "^5.6.0",
     "vite": "^5.4.0"
   }

@@ -1,0 +1,7 @@
+dist/
+node_modules/
+pnpm-lock.yaml
+package-lock.json
+*.tgz
+LICENSE
+local.code-workspace
