@@ -93,4 +93,4 @@ Produces, in `dist/`:
 
 
 ## AI: 
-I've used AI to make the addon scaffold and vite config, and done the actual toast functionality myself for practice.  I might get tired of that and just use AI for maintenance, we'll see.
+I've used AI to make the addon scaffold, vite config, readme, and package.json, and then done the actual toast functionality myself for practice.  I might get tired of that and just use AI for maintenance, we'll see.
