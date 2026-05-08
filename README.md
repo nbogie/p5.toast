@@ -8,7 +8,7 @@ In your sketch's `index.html`, add three `<script>` tags inside `<head>`, in thi
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/p5@2/lib/p5.min.js"></script>
-<script src="p5.toast.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@nbogie/p5.toast/dist/p5.toast.js"></script>
 <script src="sketch.js"></script>
 ```
 
