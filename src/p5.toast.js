@@ -1,4 +1,5 @@
-console.log("in p5.toast.js")
+//@ts-check
+console.log("in p5.toast.js");
 /**
  * p5.toast — a minimal toast notification addon for p5.js v2.
  */
@@ -14,15 +15,44 @@ console.log("in p5.toast.js")
  * @param {Record<string, Function>} lifecycles
  */
 export function toastAddon(p5, fn, lifecycles) {
-  /**
-   * Demo function
-   */
-  fn.demo = function () {
-    console.log("demo from p5.toast");
-    circle(random(width), random(height), random(50, 100));
-  };
+    /**
+     * Demo function
+     * @param {string} bgColour
+     */
+    fn.demo = function (bgColour) {
+        background(bgColour);
+        console.log("demo from p5.toast");
+        circle(random(width), random(height), random(50, 100));
+    };
+
+    /**
+     * pop up a notification for a while then remove it
+     * @param {string} message
+     */
+    fn.toast = function (message) {
+        console.log("toast from p5.toast: ", message);
+        /**
+         * @type {HTMLElement}
+         */
+        const container = getOrCreateToastContainer();
+        const divElem = document.createElement("div");
+        divElem.textContent = "hello world";
+        container.appendChild(divElem);
+    };
+
+    function getOrCreateToastContainer() {
+      const containerId =   "p5ToastContainer";
+      let container = document.getElementById(containerId);
+        if (!container) {
+            console.log("missing container - creating and appending to body");
+            container = document.createElement("div");
+            container.id = containerId;
+            document.body.appendChild(container);
+        }
+        return container;
+    }
 }
 
-if (typeof p5 !== 'undefined') {
-  p5.registerAddon(toastAddon);
+if (typeof p5 !== "undefined") {
+    p5.registerAddon(toastAddon);
 }
