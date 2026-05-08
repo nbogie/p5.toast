@@ -94,3 +94,7 @@ Produces, in `dist/`:
 
 ## AI: 
 I've used AI to make the addon scaffold, vite config, readme, and package.json, and then done the actual toast functionality myself for practice.  I might get tired of that and just use AI for maintenance, we'll see.
+
+## Contributing: 
+
+I'm not interested in AI-generated PRs.  Nor in adding a whole lot of fancy functionality.  However, you're welcome to fork the code and make your own addon which does what you want!
