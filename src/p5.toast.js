@@ -1,6 +1,5 @@
 /**
  * p5.toast — a minimal toast notification addon for p5.js v2.
- * Limitations: only designed for global mode.  assumes one sketch on page (or, at least, one per iframe)
  */
 
 /**
