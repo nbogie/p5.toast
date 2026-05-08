@@ -9,5 +9,5 @@ function draw() {
 }
 
 function mousePressed() {
-  toast();
+  toast(millis());
 }

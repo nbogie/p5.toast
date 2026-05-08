@@ -31,15 +31,21 @@ export function toastAddon(p5, fn, lifecycles) {
      */
     fn.toast = function (message) {
         console.log("toast from p5.toast: ", message);
-        /**
-         * @type {HTMLElement}
-         */
+        
+        const durationMillis = 2000;
+
         const container = getOrCreateToastContainer();
-        const divElem = document.createElement("div");
-        divElem.textContent = "hello world";
-        container.appendChild(divElem);
+        const toastElement = createToastElement(message);
+        container.appendChild(toastElement);
+        function removeToastElement(){            
+            container.removeChild(toastElement)
+        }
+        setTimeout(removeToastElement, durationMillis)
     };
 
+    /**
+     * @returns {HTMLElement} the container to which all toasts will be added.
+     */
     function getOrCreateToastContainer() {
       const containerId =   "p5ToastContainer";
       let container = document.getElementById(containerId);
@@ -51,8 +57,20 @@ export function toastAddon(p5, fn, lifecycles) {
         }
         return container;
     }
+
+    /**
+     * 
+     * @param {string} message 
+     * @returns {HTMLElement}
+     */
+    function createToastElement(message){
+        const divElem = document.createElement("div");
+        divElem.textContent = message;
+        return divElem;
+    }
 }
 
 if (typeof p5 !== "undefined") {
     p5.registerAddon(toastAddon);
 }
+
