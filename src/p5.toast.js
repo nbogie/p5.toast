@@ -23,7 +23,9 @@ export function toastAddon(p5, fn, lifecycles) {
         const durationMillis = options.duration ?? 2000;
         createglobalToastStylesIfMissing();
         const container = getOrCreateToastContainer();
+        
         const toastElement = createToastElement(message);
+        
         container.appendChild(toastElement);
         function removeToastElement(){            
             container.removeChild(toastElement)
