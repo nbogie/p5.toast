@@ -17,12 +17,12 @@ console.log("in p5.toast.js");
  */
 export function toastAddon(p5, fn, lifecycles) {
     /**
-     * Demo function
+     * show p5 sketch you're alive!
      * @param {string} bgColour
      */
-    fn.demo = function (bgColour) {
+    fn.showAlive = function (bgColour) {
         background(bgColour);
-        console.log("demo from p5.toast");
+        console.log("showAlive from p5.toast");
         circle(random(width), random(height), random(50, 100));
     };
 
