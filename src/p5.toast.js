@@ -21,7 +21,7 @@ export function toastAddon(p5, fn, lifecycles) {
     fn.toast = function (message, options={}) {
         
         const durationMillis = options.duration ?? 2000;
-        createglobalToastStylesIfMissing();
+        createGlobalToastStylesIfMissing();
         const container = getOrCreateToastContainer();
         
         const toastElement = createToastElement(message);
@@ -33,7 +33,7 @@ export function toastAddon(p5, fn, lifecycles) {
         setTimeout(removeToastElement, durationMillis)
     };
 
-    function createglobalToastStylesIfMissing(){
+    function createGlobalToastStylesIfMissing(){
         
         if (!document.getElementById("p5ToastStyles")){
             const styleElement = document.createElement("style");
