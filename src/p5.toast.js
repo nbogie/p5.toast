@@ -33,7 +33,7 @@ export function toastAddon(p5, fn, lifecycles) {
         console.log("toast from p5.toast: ", message);
         
         const durationMillis = 2000;
-
+        createglobalToastStylesIfMissing();
         const container = getOrCreateToastContainer();
         const toastElement = createToastElement(message);
         container.appendChild(toastElement);
@@ -43,6 +43,31 @@ export function toastAddon(p5, fn, lifecycles) {
         setTimeout(removeToastElement, durationMillis)
     };
 
+    function createglobalToastStylesIfMissing(){
+        
+        if (!document.getElementById("p5ToastStyles")){
+            const styleElement = document.createElement("style");
+            styleElement.id = "p5ToastStyles";
+            document.body.appendChild(styleElement)
+            
+            const css = `
+            .p5Toast { background: red; padding:0.5rem; }
+
+            #p5ToastContainer { 
+                position: absolute; 
+                right: 0px; top: 0px;
+                display: flex;
+                flex-direction: column;
+                align-items: right;
+                gap: 0.5rem;
+                };
+            
+            `;
+            styleElement.innerHTML = css;
+            console.log("appended new style element to document")
+        }
+
+    }
     /**
      * @returns {HTMLElement} the container to which all toasts will be added.
      */
@@ -65,6 +90,7 @@ export function toastAddon(p5, fn, lifecycles) {
      */
     function createToastElement(message){
         const divElem = document.createElement("div");
+        divElem.classList = "p5Toast";
         divElem.textContent = message;
         return divElem;
     }
