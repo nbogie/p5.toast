@@ -1,0 +1,32 @@
+{
+  "name": "p5.toast",
+  "version": "0.0.1",
+  "description": "Simple toast notification addon for p5.js v2.x",
+  "type": "module",
+  "main": "dist/p5.toast.js",
+  "module": "dist/p5.toast.mjs",
+  "types": "dist/p5.toast.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/p5.toast.d.ts",
+      "import": "./dist/p5.toast.mjs",
+      "require": "./dist/p5.toast.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && npm run types",
+    "types": "tsc"
+  },
+  "keywords": ["p5", "p5.js", "addon", "toast"],
+  "license": "MIT",
+  "devDependencies": {
+    "p5": "^2.2.3",
+    "typescript": "^5.6.0",
+    "vite": "^5.4.0"
+  }
+}
