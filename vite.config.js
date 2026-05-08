@@ -10,6 +10,7 @@ export default defineConfig(({ command }) => {
           fileName: (format) => (format === 'es' ? 'p5.toast.mjs' : 'p5.toast.js'),
           formats: ['es', 'iife']
         },
+        minify: false,
         emptyOutDir: true
       }
     };
