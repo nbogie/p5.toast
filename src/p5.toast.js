@@ -16,15 +16,6 @@
  */
 export function toastAddon(p5, fn, lifecycles) {
     /**
-     * show p5 sketch you're alive!
-     * @param {string} bgColour
-     */
-    fn.showAlive = function (bgColour) {
-        background(bgColour);
-        circle(random(width), random(height), random(50, 100));
-    };
-
-    /**
      * pop up a notification for a while then remove it
      * @param {string} message
      */

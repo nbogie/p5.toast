@@ -1,9 +1,9 @@
 function setup() {
   createCanvas(400, 400);
-  showAlive("skyblue")
 }
 
 function draw() {
+  background("skyblue")
 }
 
 function mousePressed() {
