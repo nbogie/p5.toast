@@ -4,14 +4,13 @@ function setup() {
 }
 
 function draw() {
-
 }
 
 
 function mousePressed() {
-  toast("hi at " + round(millis()));
-  circle(mouseX, mouseY, 40);
-
+  toast("Hi! " + round(millis()));
+  fill('#303030')
+  circle(mouseX, mouseY, 50);
 }
 
 function keyPressed(){
